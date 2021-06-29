@@ -42,7 +42,7 @@ class UnetArchitecture(nn.Module):
     self.bridge = TwiceConv(feature_list[-1],feature_list[-1]*2)
     self.decoder_last_conv = nn.Conv2d(feature_list[0],output_channels,kernel_size=1)
 
-  def forward(self,x):
+  def forward(self,x): # input dimensions height and width are multiple of 16
     skipconnection_list = []
 
     for elem in self.encoder_list:
