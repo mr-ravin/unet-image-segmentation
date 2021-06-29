@@ -42,13 +42,20 @@ class UnetArchitecture(nn.Module):
     self.bridge = TwiceConv(feature_list[-1],feature_list[-1]*2)
     self.decoder_last_conv = nn.Conv2d(feature_list[0],output_channels,kernel_size=1)
 
-
   def forward(self,x):
-    connection_list = []
+    skipconnection_list = []
 
     for elem in self.encoder_list:
       x = elem(x)
-      connection_list.append(x)
+      skipconnection_list.append(x)
       x = self.pool(x)
     x = self.bridge(x)
-    connection_list = connection_list[::-1]
+    skipconnection_list = skipconnection_list[::-1]
+
+    for idx in range(0, len(self.decoder_list), 2):  ## our decoder_list was appended twice !!
+      x = self.decoder_list[idx](x)
+      skipconnection = skipconnection_list[idx//2]
+      concat_skipconnection = torch.cat((skipconnection,x),dim=1)
+      x = self.decoder_list[idx +1](concat_skipconnection)
+
+    return self.decoder_last_conv(x)
