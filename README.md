@@ -3,7 +3,6 @@
 This repository contains the Unet architecture built with pytorch library. Here, the Unet is used to perform image segmentation task (work in progress).
 
 ##### Programmer: [Ravin Kumar](http://mr-ravin.github.io)
-##### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
 #### Software/Library Requirements:
   - Programming Language: Python 3
@@ -32,6 +31,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
 
 ```
 
+###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
 ```python
 Copyright (c) 2021 Ravin Kumar
