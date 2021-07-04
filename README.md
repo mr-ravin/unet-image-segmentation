@@ -5,7 +5,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
 ##### Programmer: [Ravin Kumar](http://mr-ravin.github.io)
 ##### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
-#### Software Requirements:
+#### Software/Library Requirements:
   - Programming Languague: Python 3
   - Deep Learning Library: Pytorch
   - Image Augmentation Library: Albumentations 
