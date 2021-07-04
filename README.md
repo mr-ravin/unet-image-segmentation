@@ -11,6 +11,20 @@ This repository contains the Unet architecture built with pytorch library. Here,
   - Image Augmentation Library: Albumentations 
   - Image Processing Library: OpenCV
 
+#### Directory Architecture:
+
+```python3
+  |-dataset
+  |    |-train/ contains training dataset
+  |    |-validate/  contains validation set
+  |
+  |-model.py # contains UNet Architecture in Pytorch Library
+  |-datascript.py # contains code to access images of dataset for training and validation.
+  |-saved_models/ # this repository contains saved .pth file for UnetArchitecture
+  
+
+```
+
 
 ```python
 Copyright (c) 2021 Ravin Kumar
