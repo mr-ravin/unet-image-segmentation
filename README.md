@@ -8,7 +8,8 @@ This repository contains the Unet architecture built with pytorch library. Here,
 #### Software Requirements:
   - Programming Languague: Python 3
   - Deep Learning Library: Pytorch
-
+  - Image Augmentation Library: Albumentations 
+  - Image Processing Library: OpenCV
 
 
 ```python
