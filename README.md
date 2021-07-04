@@ -15,13 +15,14 @@ This repository contains the Unet architecture built with pytorch library. Here,
 #### Directory Architecture:
 
 ```python3
-  |-dataset
+  |-- dataset
   |    |-train/            # This directory contains training set.
   |    |-validate/         # This directory contains validation set.
   |
-  |-model.py               # file contains Unet Architecture in Pytorch Library.
-  |-datascript.py          # file contains code to access images of dataset for training and validation.
-  |-saved_models/          # This directory contains saved .pth file for Unet Architecture.
+  |-- model.py               # file contains Unet Architecture in Pytorch Library.
+  |-- datascript.py          # file contains code to access images of dataset for training and validation.
+  |-- train.py               # file contains code for training Unet Architecture.
+  |-- saved_models/          # This directory contains saved .pth file for Unet Architecture.
   
 
 ```
