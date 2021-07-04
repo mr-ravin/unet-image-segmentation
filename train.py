@@ -26,7 +26,7 @@ def train(loader,model,optimizer,loss_fn,scaler):
   loop = tqdm(loader)
   for batch_idx, (input_data,targets) in enumerate(loop):
     input_data = input_data.to(device=DEVICE) # shift to GPU if enabled
-    targets = targets.float().unsqueeze().to(device=DEVICE) #shift to GPU if enabled.
+    targets = targets.float().unsqueeze().to(device=DEVICE) # shift to GPU if enabled.
     
     #  precision for GPU operations to improve performance while maintaining accuracy.
     with torch.cuda.amp.autocast():
@@ -39,7 +39,7 @@ def train(loader,model,optimizer,loss_fn,scaler):
     scaler.step(optimizer)
     scaler.update()
     
-    #update tqdm values
+    # update tqdm values
     loop.set_postfix(loss=loss.item())
     
 def run():  # max_pixel_value=255.0 set to get value between 0.0 and 1.0 for pixel values 
