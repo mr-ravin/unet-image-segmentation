@@ -8,7 +8,7 @@ from model import UnetArchitecture
 TRAIN_IMAGEDIR_PATH = "dataset/train/images/" 
 TRAIN_MASKDIR_PATH = "dataset/train/masks/"
 VAL_IMAGEDIR_PATH = "dataset/validate/images/"
-VAL_MASKDIR_PATH =  "dataset/validate/masks/"
+VAL_MASKDIR_PATH = "dataset/validate/masks/"
 
 IMAGE_HT = 160
 IMAGE_WT = 240
