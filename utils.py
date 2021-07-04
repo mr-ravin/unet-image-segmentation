@@ -23,7 +23,7 @@ def check_accuracy(loader,model,device="cpu"):
       Y = Y.to(device)
       pred = torch.sigmoid(model(X))
       pred = (pred > 0.5).float()
-      num_correct += (preds== Y).sum()
+      num_correct += (preds == Y).sum()
       num_pixels += torch.numel(preds)
       dice_score +=(2*(preds*Y).sum()) / ( (preds+Y).sum() + 1e-8 )
       print(str(num_correct/num_pixels)+" with accuracy: "+ f"{num_correct/num_pixels*100:.2f}")
