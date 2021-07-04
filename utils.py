@@ -5,10 +5,10 @@ from torch.utils.data import DataLoader
 import cv2 as cv
 
 def save_weights(model_state,count,path="saved_models/"):
-  torch.save(model_state,path+str(count)+"_model.pth")
+  torch.save(model_state,path+str(count)+"_Unet_model.pth")
 
 def load_weights(model,count,path="saved_models/"):
-  model.load_state_dict(torch.load(path+str(count)+"_model.pth"))
+  model.load_state_dict(torch.load(path+str(count)+"_Unet_model.pth"))
 
 
 def check_accuracy(loader,model,device="cpu"):
