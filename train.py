@@ -29,7 +29,7 @@ def train(loader,model,optimizer,loss_fn,scaler):
     targets = targets.float().unsqueeze().to(device=DEVICE) # shift to GPU if enabled.
     
     #  precision for GPU operations to improve performance while maintaining accuracy.
-    with torch.cud.amp.autocast():
+    with torch.cuda.amp.autocast():
       predictions = model(input_data)
       loss = loss_fn(predictions,targets)
       
