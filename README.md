@@ -10,6 +10,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
   - Deep Learning Library: Pytorch
   - Image Augmentation Library: Albumentations 
   - Image Processing Library: OpenCV
+  - Other Libraries: tqdm
 
 #### Directory Architecture:
 
