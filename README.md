@@ -15,7 +15,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
 #### Directory Architecture:
 
 ```python3
-  |-- dataset
+  |-- dataset/
   |      |-train/            # This directory contains training set.
   |      |   |-images/
   |      |   |-masks/
