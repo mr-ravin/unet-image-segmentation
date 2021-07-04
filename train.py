@@ -25,8 +25,8 @@ LR = 10.0**-4     # learning rate is set to 0.0001
 def train(loader,model,optimizer,loss_fn,scaler):
   loop = tqdm(loader)
   for batch_idx, (input_data,targets) in enumerate(loop):
-    input_data = input_data.to(device=DEVICE) # shift to GPU if enabled
-    targets = targets.float().unsqueeze().to(device=DEVICE) #shift to GPU if enabled.
+    input_data = input_data.to(device=DEVICE)               # shift to GPU if enabled
+    targets = targets.float().unsqueeze().to(device=DEVICE) # shift to GPU if enabled.
     
     #  precision for GPU operations to improve performance while maintaining accuracy.
     with torch.cud.amp.autocast():
@@ -39,5 +39,5 @@ def train(loader,model,optimizer,loss_fn,scaler):
     scaler.step(optimizer)
     scaler.update()
     
-    #update tqdm values
+    # update tqdm values
     loop.set_postfix(loss=loss.item())
