@@ -27,6 +27,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
   |-- datascript.py          # file contains code to access images of dataset for training and validation.
   |-- train.py               # file contains code for training Unet Architecture.
   |-- saved_models/          # This directory contains saved .pth file for Unet Architecture.
+  |-- saved_pred_images/     # This directory contains predicted segmented images.
   
 
 ```
