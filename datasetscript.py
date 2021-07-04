@@ -17,14 +17,13 @@ class CarvanaDataset(Dataset):
     mark_path = maskdir_path+"/"+self.image_list[idx][:-4]+".gif"  # corresponding mask images have filename with .gif extension
     tmp_image = cv.imread(image_path)
     tmp_mask = cv.cvtColor(cv.imread(mask_path),cv.COLOR_BGR2GRAY) # convert to single channel gray scale image
-    tmp_mask[tmp_mask==255.0] = 1.0  # converted the mask to a binary image
+    tmp_mask[tmp_mask == 255.0] = 1.0  # converted the mask to a binary image
     
-    image=tmp_image # image
-    mask=tmp_mask   # corresponding mask of image
+    image = tmp_image # image
+    mask = tmp_mask   # corresponding mask of image
     
     if self.transform is not None:
       augmentations = self.transform(image=tmp_image,mask=tmp_mask)  # used to do transformations like scaling, rotation, flip etc.
-      image=augmentations["image"]
-      mask=augmentations["mask"]
-      
+      image = augmentations["image"]
+      mask = augmentations["mask"]
     return image, mask
