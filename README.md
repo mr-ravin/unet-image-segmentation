@@ -17,7 +17,12 @@ This repository contains the Unet architecture built with pytorch library. Here,
 ```python3
   |-- dataset
   |      |-train/            # This directory contains training set.
+  |      |   |-images/
+  |      |   |-masks/
+  |      |
   |      |-validate/         # This directory contains validation set.
+  |          |-images/
+  |          |-masks/
   |
   |-- model.py               # file contains Unet Architecture in Pytorch Library.
   |-- datascript.py          # file contains code to access images of dataset for training and validation.
