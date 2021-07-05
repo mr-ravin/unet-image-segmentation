@@ -1,0 +1,9 @@
+  |
+  |-- dataset/
+  |      |-train/            # This directory contains training set.
+  |      |   |-images/
+  |      |   |-masks/
+  |      |
+  |      |-validate/         # This directory contains validation set.
+  |          |-images/
+  |          |-masks/
