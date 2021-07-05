@@ -23,18 +23,19 @@ def check_accuracy(loader,model,device="cpu"):
       Y = Y.to(device).unsqueeze(1)    # output image have one channel.
       pred = torch.sigmoid(model(X))
       pred = (pred > 0.5).float()
-      num_correct += (preds == Y).sum()
-      num_pixels += torch.numel(preds)
-      dice_score +=(2*(preds*Y).sum()) / ( (preds+Y).sum() + 1e-8 )
+      num_correct += (pred == Y).sum()
+      num_pixels += torch.numel(pred)
+      dice_score +=(2*(pred*Y).sum()) / ( (pred+Y).sum() + 1e-8 )
       print(str(num_correct/num_pixels)+" with accuracy: "+ f"{num_correct/num_pixels*100:.2f}")
       print(f"Dice score: {dice_score/len(loader)}")
       model.train()
       
       
 def get_loaders(train_dir,train_maskdir,val_dir,val_maskdir,batch_size,train_transform,val_transform,num_workers=1,pin_memory=True):
-  train_dataset = CarvanaDataset(imagedir_path=train_dir,maskdir_path=train_maskdir,transform=train_transform)
+  train_dataset = CarvanaDataset(imagedir_path = train_dir, maskdir_path = train_maskdir, transform = train_transform)
   train_loader = DataLoader(train_dataset, batch_size=batch_size, num_workers=num_workers, pin_memory=pin_memory, shuffle=True)
-  val_dataset = CarvanaDataset(imagedir_path=val_dir,maskdir_path=val_maskdir,transform=val_transform)
+  
+  val_dataset = CarvanaDataset(imagedir_path = val_dir, maskdir_path = val_maskdir, transform = val_transform)
   val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers=num_workers, pin_memory=pin_memory, shuffle=False)
   return train_loader, val_loader
   
