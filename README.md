@@ -11,6 +11,10 @@ This repository contains the Unet architecture built with pytorch library. Here,
   - Image Processing Library: OpenCV
   - Other Libraries: tqdm
 
+###  Demonstration of Image Segmentation using Unet:
+
+![Unet Image Segmentation](https://github.com/mr-ravin/unet-image-segmentation/blob/main/inference.jpg)
+
 #### Directory Architecture:
 
 ```python3
