@@ -14,16 +14,16 @@ VAL_MASKDIR_PATH =  "dataset/validate/masks/"
 
 IMAGE_HT = 160
 IMAGE_WT = 240
-LOAD_MODEL = True
+LOAD_MODEL = False
 LOAD_MODEL_ID = 0   # id of the saved .pth file you want to load from the directory saved_models/  
-TRAINING = 0        # set 1 to train, else set to 0 for just inference. 
+TRAINING = 1        # set 1 to train, else set to 0 for just inference. 
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_WORKERS = 1
 PIN_MEMORY = True   # used when working with GPU
 
 BATCH_SIZE = 8
-EPOCHS = 1
+EPOCHS = 10
 LR = 10.0**-4       # learning rate is set to 0.0001
 
 def train(loader,model,optimizer,loss_fn,scaler):
