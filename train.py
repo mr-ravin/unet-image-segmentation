@@ -85,3 +85,5 @@ def run():  # max_pixel_value=255.0 set to get value between 0.0 and 1.0 for pix
       utils.check_accuracy(validation_loader, model, device=DEVICE)
       utils.save_pred(val_loader, model, folder="saved_pred_images/", device=DEVICE)
       
+### running 
+run()
