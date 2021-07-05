@@ -33,7 +33,7 @@ This repository contains the Unet architecture built with pytorch library. Here,
 ```
 ###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
-Note: In our dataset we had .gif files as mask, so we first converted them .jpg and then used OpenCV because .gif files have difficulty in opencv.
+Note: In our dataset we had .gif files as mask, so we first converted them to .jpg and then used OpenCV because .gif files have difficulty in opencv.
 
 
 ### Steps for Training the Unet Model:
