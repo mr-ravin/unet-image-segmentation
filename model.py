@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torchvision.transforms.functional as TFN
 
 class TwiceConv(nn.Module):
   def __init__(self,input_channels,output_channels):
