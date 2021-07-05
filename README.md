@@ -30,10 +30,21 @@ This repository contains the Unet architecture built with pytorch library. Here,
   |-- saved_models/          # This directory contains saved .pth file for Unet Architecture.
   |-- saved_pred_images/     # This directory contains predicted segmented images.
   
+```
+###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
+
+### Steps for Training the Unet Model:
+
+```python3
+python3 train.py
 ```
 
-###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
+### Steps for Performing only Inference:
+- in the train.py file, do set the following values:
+  - ```python LOAD_MODEL = 1     # set to 1 if you want to load weights and bias values of .pth file, else set it to 0.```
+  - ```python LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. 1_Unet_model.pth). ```
+  - ```python TRAINING = 0       # set to only perform inference. ```
 
 ```python
 Copyright (c) 2021 Ravin Kumar
