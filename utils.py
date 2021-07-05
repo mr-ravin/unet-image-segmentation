@@ -40,7 +40,7 @@ def get_loaders(train_dir,train_maskdir,val_dir,val_maskdir,batch_size,train_tra
   return train_loader, val_loader
   
 def save_pred(loader, model, folder="saved_pred_images/", device="cpu"):
-  model.eval() # it is same as:   model.train(mode=False)
+  model.eval()             # it is same as:   model.train(mode=False)
   for idx, (x, y) in enumerate(loader):
     x = x.to(device=device)
     with torch.no_grad():
@@ -50,6 +50,5 @@ def save_pred(loader, model, folder="saved_pred_images/", device="cpu"):
     for elem in preds:
       cnt += 1
       elem=elem.squeeze(0) # convert [1,h,w] to [h,w]
-      print(elem.size())
       cv.imwrite(folder+str(idx)+"_"+str(cnt)+"_pred.jpg",elem.numpy())
   model.train()
