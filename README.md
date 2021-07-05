@@ -42,9 +42,9 @@ python3 train.py
 
 ### Steps for Performing only Inference:
 - Inside the train.py file, do set the following values:
-  - ```python LOAD_MODEL = 1     # set to 1 if you want to load weights and bias values of .pth file, else set it to 0.```
-  - ```python LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. 1_Unet_model.pth). ```
-  - ```python TRAINING = 0       # set to only perform inference. ```
+  - ```LOAD_MODEL = 1     # set to 1 if you want to load weights and bias values of .pth file, else set it to 0.```
+  - ```LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. 1_Unet_model.pth). ```
+  - ```TRAINING = 0       # set to only perform inference. ```
 
 During Training and Inference part, all the output images will be saved inside the directory saved_pred_images/ 
 
