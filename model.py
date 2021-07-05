@@ -3,7 +3,6 @@ import torch.nn as nn
 import torchvision.transforms.functional as TFN
 
 class TwiceConv(nn.Module):
-  
   def __init__(self,input_channels,output_channels):
     super(TwiceConv, self).__init__()
     self.conv_pair = nn.Sequential(
@@ -13,13 +12,10 @@ class TwiceConv(nn.Module):
       nn.Conv2d(output_channels,output_channels,3,1,1,bias=False),
       nn.ReLU(inplace = True)
     )
-    
   def forward(self,x):
     return self.conv_pair(x)
 
-  
 class UnetArchitecture(nn.Module):
-  
   def __init__(self,input_channels=3,output_channels=1,feature_list=[64,128,256,512]):
     super(UnetArchitecture,self).__init__()
 
@@ -35,9 +31,12 @@ class UnetArchitecture(nn.Module):
     # decoder part OR Up Part
     for idx in range(1,len_feature_list+1): # reading feature_list in reverse order
       self.decoder_list.append(
-              nn.ConvTranspose2d( feature_list[len_feature_list-idx]*2,feature_list[len_feature_list-idx],kernel_size=2,stride=2 )
+              nn.ConvTranspose2d(
+               feature_list[len_feature_list-idx]*2,feature_list[len_feature_list-idx],kernel_size=2,stride=2
+               )
           )
-      self.decoder_list.append( TwiceConv(feature_list[len_feature_list-idx]*2,feature_list[len_feature_list-idx] )
+      self.decoder_list.append(
+             TwiceConv(feature_list[len_feature_list-idx]*2,feature_list[len_feature_list-idx])
           )
 
     self.bridge = TwiceConv(feature_list[-1],feature_list[-1]*2)
@@ -60,3 +59,12 @@ class UnetArchitecture(nn.Module):
       x = self.decoder_list[idx +1](concat_skipconnection)
 
     return self.decoder_last_conv(x)
+
+def test():
+  x = torch.randn(3,1,160,160)
+  model = UnetArchitecture(input_channels=1,output_channels=1)
+  preds=model(x)
+  print(preds.shape)
+  print(x.shape)
+
+#test()
