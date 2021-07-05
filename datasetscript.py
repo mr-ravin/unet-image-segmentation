@@ -13,12 +13,12 @@ class CarvanaDataset(Dataset):
     return len(self.image_list)
     
   def __getitem__(self,idx):
-    image_path = self.imagedir_path+self.image_list[idx]            # filename with .jpg extension
-    mask_path = self.maskdir_path+self.image_list[idx]              # corresponding mask images have same filenames
+    image_path = self.imagedir_path+self.image_list[idx]             # filename with .jpg extension
+    mask_path = self.maskdir_path+self.image_list[idx]               # corresponding mask images have same filenames
     tmp_image = cv.imread(image_path)
     tmp_mask = cv.imread(mask_path)
-    tmp_mask = cv.cvtColor(tmp_mask,cv.COLOR_BGR2GRAY) # convert to single channel gray scale image
-    tmp_mask[tmp_mask==255.0] = 1.0  # converted the mask to a binary image
+    tmp_mask = cv.cvtColor(tmp_mask,cv.COLOR_BGR2GRAY)               # convert to single channel gray scale image
+    tmp_mask[tmp_mask==255.0] = 1.0                                  # converted the mask to a binary image
     
     image=tmp_image # image
     mask=tmp_mask   # corresponding mask of image
