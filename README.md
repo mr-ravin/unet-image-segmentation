@@ -46,6 +46,8 @@ python3 train.py
   - ```python LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. 1_Unet_model.pth). ```
   - ```python TRAINING = 0       # set to only perform inference. ```
 
+During Training and Inference part, all the output images will be saved inside the directory saved_pred_images/ 
+
 ```python
 Copyright (c) 2021 Ravin Kumar
 Website: https://mr-ravin.github.io
