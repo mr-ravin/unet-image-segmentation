@@ -22,8 +22,8 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_WORKERS = 1
 PIN_MEMORY = True   # used when working with GPU
 
-BATCH_SIZE = 8
-EPOCHS = 10
+BATCH_SIZE = 16
+EPOCHS = 30
 LR = 10.0**-4       # learning rate is set to 0.0001
 
 def train(loader,model,optimizer,loss_fn,scaler):
