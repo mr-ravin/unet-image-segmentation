@@ -41,7 +41,7 @@ python3 train.py
 ```
 
 ### Steps for Performing only Inference:
-- in the train.py file, do set the following values:
+- Inside the train.py file, do set the following values:
   - ```python LOAD_MODEL = 1     # set to 1 if you want to load weights and bias values of .pth file, else set it to 0.```
   - ```python LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. 1_Unet_model.pth). ```
   - ```python TRAINING = 0       # set to only perform inference. ```
