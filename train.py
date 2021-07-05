@@ -14,16 +14,16 @@ VAL_MASKDIR_PATH =  "dataset/validate/masks/"
 
 IMAGE_HT = 160
 IMAGE_WT = 240
-LOAD_MODEL = False
-LOAD_MODEL_ID = 1   # id of the saved .pth file you want to load from the directory saved_models/  
-TRAINING = 1        # set 1 to train, else set to 0 for just inference. 
+LOAD_MODEL = True
+LOAD_MODEL_ID = 0   # id of the saved .pth file you want to load from the directory saved_models/  
+TRAINING = 0        # set 1 to train, else set to 0 for just inference. 
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_WORKERS = 1
 PIN_MEMORY = True   # used when working with GPU
 
-BATCH_SIZE = 16
-EPOCHS = 100
+BATCH_SIZE = 8
+EPOCHS = 1
 LR = 10.0**-4       # learning rate is set to 0.0001
 
 def train(loader,model,optimizer,loss_fn,scaler):
@@ -84,8 +84,8 @@ def run():  # max_pixel_value=255.0 set to get value between 0.0 and 1.0 for pix
       train(train_loader, model, optimizer, loss_fn, scaler)
       utils.save_weights(model,epoch)                               # save weights and biases  
       utils.check_accuracy(validation_loader, model, device=DEVICE)
-      utils.save_pred(val_loader, model, folder="saved_pred_images/", device=DEVICE)
+      utils.save_pred(validation_loader, model, folder="saved_pred_images/", device=DEVICE)
   else:  # in case of inference only.
-    utils.save_pred(val_loader, model, folder="saved_pred_images/", device=DEVICE)
+    utils.save_pred(validation_loader, model, folder="saved_pred_images/", device=DEVICE)
 ### running 
 run()

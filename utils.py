@@ -4,8 +4,8 @@ from datasetscript import CarvanaDataset
 from torch.utils.data import DataLoader
 import cv2 as cv
 
-def save_weights(model_state,count,path="saved_models/"):
-  torch.save(model_state,path+str(count)+"_Unet_model.pth")
+def save_weights(model,count,path="saved_models/"):
+  torch.save(model.state_dict(),path+str(count)+"_Unet_model.pth")
 
 def load_weights(model,count,path="saved_models/"):
   model.load_state_dict(torch.load(path+str(count)+"_Unet_model.pth"))
@@ -46,5 +46,10 @@ def save_pred(loader, model, folder="saved_pred_images/", device="cpu"):
     with torch.no_grad():
       preds = torch.sigmoid(model(x))
       preds = (preds > 0.5).float()
-    cv.imwrite(preds,folder+str(idx)+"_pred.png")
+    cnt=0
+    for elem in preds:
+      cnt += 1
+      elem=elem.squeeze(0) # convert [1,h,w] to [h,w]
+      print(elem.size())
+      cv.imwrite(folder+str(idx)+"_"+str(cnt)+"_pred.jpg",elem.numpy())
   model.train()
