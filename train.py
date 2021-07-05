@@ -84,6 +84,7 @@ def run():  # max_pixel_value=255.0 set to get value between 0.0 and 1.0 for pix
       utils.save_weights(model,epoch)                               # save weights and biases  
       utils.check_accuracy(validation_loader, model, device=DEVICE)
       utils.save_pred(val_loader, model, folder="saved_pred_images/", device=DEVICE)
-      
+  else:  # in case of inference only.
+    utils.save_pred(val_loader, model, folder="saved_pred_images/", device=DEVICE)
 ### running 
 run()
