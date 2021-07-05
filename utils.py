@@ -14,7 +14,7 @@ def load_weights(model,count,path="saved_models/"):
 def check_accuracy(loader,model,device="cpu"):
   num_correct = 0
   num_pixels = 0.0
-  dice_score = 0 # it gives the better understanding about accuracy of the model for segmentation
+  dice_score = 0                       # it gives the better understanding about accuracy of the model for segmentation
   model.eval()
   
   with torch.no_grad():
