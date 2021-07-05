@@ -20,7 +20,7 @@ def check_accuracy(loader,model,device="cpu"):
   with torch.no_grad():
     for X,Y in loader:
       X = X.to(device)
-      Y = Y.to(device)
+      Y = Y.to(device).unsqueeze(1)    # output image have one channel.
       pred = torch.sigmoid(model(X))
       pred = (pred > 0.5).float()
       num_correct += (preds == Y).sum()
