@@ -45,7 +45,7 @@ This repository contains the Unet architecture built with Pytorch library. Here,
 
 ###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
-Note: In our dataset we had .gif files as mask, so we first converted them to .jpg and then used OpenCV because .gif files have difficulty in opencv.
+Note: In the car image segmentation dataset the image mask was provided as a .gif file, so we first converted them to .jpg and then used OpenCV because .gif files have difficulty in opencv.
 Terminal tool used for this conversion is: ```sudo apt install imagemagick```. A sample example is running in the terminal ```convert *.gif 1.jpg``` and also correspondingly changing the names of associated input images.
 
 ### Steps for Training the Unet Model:
