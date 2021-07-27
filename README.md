@@ -1,6 +1,6 @@
 # Unet Architecture for Image Segmentation
 
-This repository contains the Unet architecture built with Pytorch library. Here, the Unet architecture is used to perform the image segmentation.
+This repository contains the Unet architecture built with Pytorch library. Here, the Unet architecture is used to perform the image segmentation. Image Segmentation is performed on two different datasets, first dataset is of performing cell segmentation in biology, and the second dataset is of car segmentation.
 
 ##### Programmer: [Ravin Kumar](http://mr-ravin.github.io)
 
