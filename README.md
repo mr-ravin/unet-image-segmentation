@@ -5,6 +5,7 @@ This repository contains the Unet architecture built with Pytorch library. Here,
 ##### Programmer: [Ravin Kumar](http://mr-ravin.github.io)
 
 #### Software/Library Requirements:
+
   - Programming Language: Python 3
   - Deep Learning Library: Pytorch
   - Image Augmentation Library: Albumentations 
@@ -12,6 +13,7 @@ This repository contains the Unet architecture built with Pytorch library. Here,
   - Other Libraries: tqdm
 
 ###  Demonstration of Image Segmentation on Biology Images using Unet:
+
   - Dataset: ![Broad Bioimage Benchmark Collection](https://bbbc.broadinstitute.org/BBBC005)
 
 ![Biology Image Segmentation](https://github.com/mr-ravin/unet-image-segmentation/blob/main/biodata.png)
@@ -40,6 +42,7 @@ This repository contains the Unet architecture built with Pytorch library. Here,
   |-- saved_pred_images/     # This directory contains predicted segmented images.
   
 ```
+
 ###### Repository: https://github.com/mr-ravin/unet-image-segmentation/
 
 Note: In our dataset we had .gif files as mask, so we first converted them to .jpg and then used OpenCV because .gif files have difficulty in opencv.
@@ -52,6 +55,7 @@ python3 train.py
 ```
 
 ### Steps for Performing only Inference:
+
 - Inside the train.py file, do set the following values:
   - ```LOAD_MODEL = 1     # set to 1 if you want to load weights and bias values of .pth file, else set it to 0.```
   - ```LOAD_MODEL_ID = 1  # set the model id present in saved_models/id_Unet_model.pth format (i.e. saved_models/1_Unet_model.pth).```
