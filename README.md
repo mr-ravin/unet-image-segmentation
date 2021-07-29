@@ -20,7 +20,7 @@ This repository contains the Unet architecture built with Pytorch library. Here,
 
 ###  Demonstration of Image Segmentation on Car Images using Unet:
 
-  - Dataset" ![Carvana Image Masking Challenge](https://www.kaggle.com/c/carvana-image-masking-challenge)
+  - Dataset: ![Carvana Image Masking Challenge](https://www.kaggle.com/c/carvana-image-masking-challenge)
 
 ![Unet Image Segmentation](https://github.com/mr-ravin/unet-image-segmentation/blob/main/inference.jpg)
 
