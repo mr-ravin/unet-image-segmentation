@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import torchvision.transforms.functional as TF
 
 class TwiceConv(nn.Module):
   def __init__(self,input_channels,output_channels):
@@ -54,6 +55,8 @@ class UnetArchitecture(nn.Module):
     for idx in range(0, len(self.decoder_list), 2):  ## our decoder_list was appended twice !!
       x = self.decoder_list[idx](x)
       skipconnection = skipconnection_list[idx//2]
+      if x.shape != skipconnection.shape:
+          x = TF.resize(x, size=skipconnection.shape[2:])
       concat_skipconnection = torch.cat((skipconnection,x),dim=1)
       x = self.decoder_list[idx +1](concat_skipconnection)
 
